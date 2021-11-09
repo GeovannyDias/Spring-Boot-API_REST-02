@@ -24,6 +24,7 @@ public class CustomerModel {
     private String password;
     private Boolean status;
 
+    // OneToMany → NO ES NECESARIO UTILITZAR POR EL RENDIMIENTO (VARIOS REGISTROS)
     // mappedBy = "customers" → Como se va a escribir o mapear en OrderModel.java
     // fetch = FetchType.LAZY → Se va a cargar unicamente cuando se la pida
     // fetch = FetchType.EAGER → Los elementos ya tiene los elementos cargados

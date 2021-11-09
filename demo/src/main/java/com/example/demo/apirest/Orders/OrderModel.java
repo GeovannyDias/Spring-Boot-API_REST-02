@@ -75,4 +75,27 @@ public class OrderModel {
         this.customers = customers;
     }
 
+    // Default Contructor
+    public OrderModel() {
+    }
+
+    // public OrderModel(String name_item, String description, String price, Boolean
+    // status, CustomerModel customers) {
+    // super();
+    // this.name_item = name_item;
+    // this.description = description;
+    // this.price = price;
+    // this.status = status;
+    // this.customers = customers;
+    // }
+
+    // DTO to Entity
+    public OrderModel(OrderDto order) {
+        super();
+        this.name_item = order.getName_item();
+        this.description = order.getDescription();
+        this.price = order.getPrice();
+        this.status = order.getStatus();
+    }
+
 }

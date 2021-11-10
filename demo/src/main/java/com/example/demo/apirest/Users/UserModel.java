@@ -9,6 +9,8 @@ package com.example.demo.apirest.Users;
 
 import javax.persistence.*; // Impota todas la anotaciones de JPA
 
+import com.example.demo.utils.TimestampEntity;
+
 // import com.example.demo.others.DateEntity;
 // import com.example.demo.others.Date2;
 
@@ -16,7 +18,7 @@ import javax.persistence.*; // Impota todas la anotaciones de JPA
 
 @Entity
 @Table(name = "users")
-public class UserModel {
+public class UserModel extends TimestampEntity {
 
     @Id // Detecta que private Long id es un ID
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Se genere automáticamente
@@ -26,6 +28,19 @@ public class UserModel {
     private String name;
     private String email;
     private Integer priority;
+
+    // @Column(columnDefinition = "TIMESTAMP", name = "created_at", nullable =
+    // false, updatable = false)
+    // mysql way
+
+    // @Column(name = "created_at", insertable = false, updatable = false,
+    // columnDefinition = "TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP")
+    // private LocalDateTime created_at;
+
+    // @Column(name = "updated_at", insertable = false, updatable = false,
+    // columnDefinition = "TIMESTAMP on update CURRENT_TIMESTAMP NOT NULL DEFAULT
+    // CURRENT_TIMESTAMP")
+    // private LocalDateTime updated_at;
 
     // LocalDateTime createdAt;
     // LocalDateTime udpatedAt;
